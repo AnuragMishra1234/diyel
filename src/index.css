@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  code, pre, kbd {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Scrollbar for Code Blocks */
+pre::-webkit-scrollbar,
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+pre::-webkit-scrollbar-track,
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb,
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+
+pre::-webkit-scrollbar-thumb:hover,
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Prism.js Syntax Highlighting - Dark Theme (Default) */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #64748b; /* slate-500 */
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #94a3b8; /* slate-400 */
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f43f5e; /* rose-500 */
+}
+
+.token.boolean,
+.token.number {
+  color: #f59e0b; /* amber-500 */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #10b981; /* emerald-500 */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #ec4899; /* pink-500 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #a855f7; /* purple-500 */
+  font-weight: 500;
+}
+
+.token.function,
+.token.class-name {
+  color: #38bdf8; /* sky-400 */
+  font-weight: 500;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #eab308; /* yellow-500 */
+}
+
+/* Light Theme Overrides */
+html.light .token.comment,
+html.light .token.prolog,
+html.light .token.doctype,
+html.light .token.cdata {
+  color: #64748b;
+  font-style: italic;
+}
+
+html.light .token.punctuation {
+  color: #475569;
+}
+
+html.light .token.property,
+html.light .token.tag,
+html.light .token.constant,
+html.light .token.symbol {
+  color: #e11d48;
+}
+
+html.light .token.boolean,
+html.light .token.number {
+  color: #d97706;
+}
+
+html.light .token.selector,
+html.light .token.attr-name,
+html.light .token.string,
+html.light .token.char,
+html.light .token.builtin {
+  color: #047857;
+}
+
+html.light .token.operator {
+  color: #db2777;
+}
+
+html.light .token.atrule,
+html.light .token.attr-value,
+html.light .token.keyword {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+html.light .token.function,
+html.light .token.class-name {
+  color: #0284c7;
+  font-weight: 600;
+}
+
+html.light .token.variable {
+  color: #b45309;
+}
