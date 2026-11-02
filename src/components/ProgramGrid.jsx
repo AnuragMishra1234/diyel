@@ -10,8 +10,14 @@ export default function ProgramGrid({ programs, onSelectProgram }) {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return programs;
 
+    // Direct program number matching (e.g. "1", "01", "8", "08")
+    if (/^0?[1-8]$/.test(q)) {
+      const targetId = parseInt(q, 10);
+      return programs.filter((p) => p.id === targetId);
+    }
+
     return programs.filter((p) => {
-      const matchNumber = p.number.toLowerCase().includes(q) || `program ${p.number}`.toLowerCase().includes(q) || String(p.id) === q;
+      const matchNumber = p.number.toLowerCase().includes(q) || `program ${p.number}`.toLowerCase().includes(q);
       const matchTitle = p.title.toLowerCase().includes(q);
       const matchTags = p.tags?.some((t) => t.toLowerCase().includes(q));
       const matchDesc = p.description?.toLowerCase().includes(q);

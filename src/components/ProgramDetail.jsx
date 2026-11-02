@@ -41,6 +41,7 @@ export default function ProgramDetail({
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
+        textArea.setSelectionRange(0, 999999);
         const successful = document.execCommand('copy');
         document.body.removeChild(textArea);
         if (!successful) {

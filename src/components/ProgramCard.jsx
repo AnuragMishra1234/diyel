@@ -16,6 +16,7 @@ export default function ProgramCard({ program, onSelect }) {
         textArea.style.left = '-999999px';
         document.body.appendChild(textArea);
         textArea.select();
+        textArea.setSelectionRange(0, 999999);
         document.execCommand('copy');
         document.body.removeChild(textArea);
       }
